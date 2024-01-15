@@ -14,7 +14,7 @@ resource "oci_objectstorage_bucket" "bucket" {
     content {
       display_name = retention_rules.value.display_name
       dynamic "duration" {
-        for_each = retention_rules.value.duration
+        for_each = retention_rules.value.duration != null ? [retention_rules.value.duration] : []
         content {
           time_amount = duration.value.time_amount
           time_unit   = duration.value.time_unit

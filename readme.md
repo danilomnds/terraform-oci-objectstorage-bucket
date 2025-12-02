@@ -9,7 +9,7 @@ Module developed to standardize the creation of Oracle Object Storage Bucket.
 
 | Module Version | Terraform Version | OCI Version     |
 |----------------|-------------------| --------------- |
-| v1.0.0         | v1.6.6            | 5.23.0          |
+| v1.0.0         | v1.9.3 - v1.14.0  | 6.4.0 - 7.27.0  |
 
 ## Specifying a version
 

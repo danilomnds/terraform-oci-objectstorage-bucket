@@ -43,7 +43,7 @@ resource "oci_identity_policy" "bucket_policy" {
   name           = "policy_${var.name}"
   description    = "allow one or more groups to manage objects inside a bucket"
   statements = [
-    "Allow group ${each.value} to read buckets in compartment ${var.compartment}",
-    "Allow group ${each.value} to manage objects in compartment ${var.compartment}"
+    "Allow group ${each.value} to read buckets in compartment ${var.compartment} where target.bucket.name = '${oci_objectstorage_bucket.bucket.name}'",
+    "Allow group ${each.value} to manage objects in compartment ${var.compartment} where target.bucket.name = '${oci_objectstorage_bucket.bucket.name}'"
   ]
 }
